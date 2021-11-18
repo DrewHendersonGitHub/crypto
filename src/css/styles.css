@@ -1,4 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
+
 .coin-logo {
   height: auto;
   max-width: 100px;
+}
+
+h2 {
+  text-align: center;
+}
+
+.btn {
+  margin: 0 auto;
+  display: block;
+  margin-top: 15px;
+  background-image: radial-gradient(circle, #df3ea1 0%, #2d4e94 49%, #df3ea1);
+}
+
+.btn:hover {
+  animation:slidebg 2s linear infinite;
+}
+
+#get-info {
+  margin-top: 53px;
+}
+
+@keyframes slidebg {
+  to {
+    background-position:30vw;
+  }
+}
+
+body {
+  background-image: url("https://images-ext-2.discordapp.net/external/za28uqVUa2vxQogyJRdNb7RyJl-NNBgNhqpiOnmnONk/https/www.echofin.com/blog/content/images/2021/02/kjvdc916y6051.png");
+  background-size: 300px;
+  background-repeat: repeat;
+  font-family: 'Oswald', sans-serif;
+}
+
+body:hover {
+  animation:slidebg 2s linear infinite alternate;
+}
+
+.container {
+  background-color: rgba(255,255,255, 0.9);
+  padding: 100px;
+}
+
+h1 {
+  
+  font-size: 5em;
+  margin-bottom: 1em;
+  text-align: center;
+  text-decoration: underline;
 }

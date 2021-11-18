@@ -13,13 +13,14 @@ function buildCryptoString(response) {
   let htmlToDisplay = [];
   const intervalDisplays = ["1d", "30d", "365d"];
   for (let i = 0; i < response.length; i++) {
-    htmlToDisplay.push(`<p>Coin Name: ${response[i].name}</p>`);
+    htmlToDisplay.push(`<hr>`);
+    htmlToDisplay.push(`<p>&cent;oin Name: ${response[i].name}</p>`);
     htmlToDisplay.push(`<img src= '${response[i].logo_url}' class='coin-logo'>`);
-    htmlToDisplay.push(`<p>Price: $${response[i].price}</p>`);
+    htmlToDisplay.push(`<p>Pri&cent;e: $${response[i].price}</p>`);
     let marketCapPercent = (response[i].market_cap_dominance * 100).toFixed(2);
-    htmlToDisplay.push(`<p>Market Cap Dominance: ${marketCapPercent}%</p>`);
+    htmlToDisplay.push(`<p>Market &cent;ap Dominan&cent;e: ${marketCapPercent}%</p>`);
     for (let j=0; j < intervalDisplays.length; j++) {
-      htmlToDisplay.push(`<p>Price change over ${intervalDisplays[j]}: `);
+      htmlToDisplay.push(`<p>Pri&cent;e &cent;hange over ${intervalDisplays[j]}: `);
       if (response[i][intervalDisplays[j]].price_change < 0) {
         htmlToDisplay.push(`-`);
       } else {
@@ -27,7 +28,6 @@ function buildCryptoString(response) {
       }
       htmlToDisplay.push(`$${Math.abs(response[i][intervalDisplays[j]].price_change)}</p>`);
     }
-    htmlToDisplay.push(`<hr>`);
   }
   return htmlToDisplay.join('');
 }
@@ -43,7 +43,7 @@ function buildConvertString(response, coin, amount) {
       return `<p>${amount} ${coin} is equal to $${amount * response[i].rate} USD.</p>`;      
     }
   }
-  return `<p>We couldn't find a conversion rate for ${coin}!`;
+  return `<p>We couldn't find a &cent;onversion rate for ${coin}!`;
 }
 
 function displayErrors(error) {
@@ -69,7 +69,7 @@ $(document).ready(function() {
         if (cryptoResponse instanceof Error) {
           throw Error(`Nomic API error: ${cryptoResponse.message}`);
         }
-        displayConvert(cryptoResponse, $('#coin').val(), $('#amount').val());
+        displayConvert(cryptoResponse, $('#coin').val().toUpperCase(), $('#amount').val());
       })
       .catch(function(error) {
         displayErrors(error.message);

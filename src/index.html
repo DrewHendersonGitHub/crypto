@@ -4,23 +4,31 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Top Cryptocurrencies</title>
+  <link rel="icon" href="https://freepngimg.com/thumb/minecraft/11-2-minecraft-diamond-png.png">
+  <title>Top &cent;rypto&cent;urren&cent;ies</title>
 </head>
 <body>
   <div class="container">
-    <h1>Top Cryptocurrencies</h1>
-    <h2>Get information about the top cryptocurrencies</h2>
-    <div id="button">
-      <button class="btn btn-success" id="get-info">Get Info</button>
+    <h1>Top &cent;rypto&cent;urren&cent;ies</h1>
+    <div class="row">
+      <div class="col-6">
+        <h2>Get information about the top &cent;rypto&cent;urren&cent;ies</h2>
+        <div id="button-info" class="buttons">
+          <button class="btn btn-success" id="get-info">Get Info</button>
+        </div>
+      </div>
+      <div class="col-6">
+        <h2>&cent;onvert &cent;rypto to U$D</h2>
+        <label for="coin">&cent;rypto &cent;oin:</label>
+        <input id="coin" type="text" placeholder="ex: BTC">
+        <label for="amount">Amount:</label>
+        <input id="amount" type="number" placeholder="ex: 2">
+        <div id="button-convert" class="buttons">
+          <button class="btn btn-success" id="convert">&cent;onvert</button>
+        </div>
+      </div>
     </div>
-    <h2>Convert crypto to USD</h2>
-    <label for="coin">Crypto Coin:</label>
-    <input id="coin" type="text" placeholder="ex: BTC">
-    <label for="amount">Amount:</label>
-    <input id="amount" type="number" placeholder="ex: 2">
-    <div id="button-convert">
-      <button class="btn btn-success" id="convert">Convert</button>
-    </div>
+    
     <div id="show-info"></div>
     <div id="show-errors"></div>
   </div>
